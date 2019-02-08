@@ -11,4 +11,3 @@ Cheap position tracking for oculus go (and other vr systems!)
 # libraries & resources:
 
 - https://github.com/sta/websocket-sharp
-- Low Poly Environment and Oculus Integration from Unity Asset Store
