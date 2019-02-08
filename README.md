@@ -1,29 +1,12 @@
 # Simple example for 6dof unity implementation in Unity game
 
-Cheap 6dof tracking for oculus go.
-
-Part of bigger framework (gobof).
-
-Currently only tracking x and y axis.
+Cheap position tracking for oculus go (and other vr systems!)
 
 # how to use?
 
-- put green ping pong ball on the top of your head
-- run this app in unity
-- run tracker script (https://github.com/jaroslaw-weber/gobofjs)
-- move left, right, up, down to calibrate the camera
-
-# features:
-
-- stabilising jitter
-- max moving distance
-- x and z axis tracking
-
-# todo:
-
-- z axis detection
-- better calibration system
-- build unity package for easy install
+- attach green ping pong ball to your headset.
+- run the app with this library
+- run tracker script (https://jaroslaw-weber.github.io/gobofjs/)
 
 # libraries & resources:
 
