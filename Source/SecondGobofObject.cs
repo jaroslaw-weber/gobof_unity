@@ -5,7 +5,7 @@ public class SecondGobofObject : MonoBehaviour, IGobofObject {
     
     public int ID { get { return 2;}}
 
-    public GetTransform()
+    public Transform  GetTransform()
     {
         return transform;
     }

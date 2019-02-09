@@ -5,7 +5,7 @@ public class MainGobofObject : MonoBehaviour, IGobofObject {
     
     public int ID { get { return 1;}}
 
-    public GetTransform()
+    public Transform  GetTransform()
     {
         return transform;
     }
