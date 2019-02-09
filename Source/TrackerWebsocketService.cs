@@ -8,11 +8,9 @@ public class TrackerWebsocketService : WebSocketBehavior
   {
     public static Dictionary<int, Vector3> Positions = new Dictionary<int, Vector3>();
 
-	  const float maxStep = 10f;
-
     protected override void OnMessage (MessageEventArgs e)
     {
-      var arr = e.Data.Split(",");
+      var arr = e.Data.Split(',');
       var id = int.Parse(arr[0]);
       var x = float.Parse(arr[1]);
       var y = float.Parse(arr[2]);

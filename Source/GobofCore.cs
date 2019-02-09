@@ -16,7 +16,7 @@ public class GobofCore : MonoBehaviour {
     void Awake() {
       Instance = this;
       wssv = new WebSocketServer ("ws://0.0.0.0:8765");
-      wssv.AddWebSocketService<TrackerWebsocketsService> ("/");
+      wssv.AddWebSocketService<TrackerWebsocketService> ("/");
       wssv.Start ();
         
     }
@@ -36,9 +36,9 @@ public class GobofCore : MonoBehaviour {
       foreach (var o in _registeredObjects)
       {
         var key = o.Key;
-        if(wssv.Positions.ContainsKey(key))
+        if(TrackerWebsocketService.Positions.ContainsKey(key))
         {
-          var p = wssv.Positions[key];
+          var p = TrackerWebsocketService.Positions[key];
           var tr = o.Value.GetTransform();
           tr.localPosition = Vector3.Lerp(tr.localPosition, p, (2.5f * Time.fixedDeltaTime));
         }
