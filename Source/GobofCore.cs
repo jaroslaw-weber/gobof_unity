@@ -18,7 +18,7 @@ public class GobofCore : MonoBehaviour {
       wssv = new WebSocketServer ("ws://0.0.0.0:8765");
       wssv.AddWebSocketService<TrackerWebsocketService> ("/");
       wssv.Start ();
-        
+      Debug.Log("server started!");
     }
 
     public static void RegisterObject(IGobofObject o)

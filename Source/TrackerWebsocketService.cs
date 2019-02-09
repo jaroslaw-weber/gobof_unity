@@ -16,6 +16,7 @@ public class TrackerWebsocketService : WebSocketBehavior
       var y = float.Parse(arr[2]);
       var z = float.Parse(arr[3]);
       var v = new Vector3(x,y,z);
+      Debug.Log("position: "+v);
       Positions[id] = v;
     }
   }
