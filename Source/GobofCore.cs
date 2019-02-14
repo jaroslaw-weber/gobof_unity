@@ -2,23 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using WebSocketSharp;
-using WebSocketSharp.Server;
+using Fleck;
 
 public class GobofCore : MonoBehaviour {
 
     private static GobofCore Instance;
 
     WebSocketServer wssv;
+    TrackerWebsocketService tws;
 
     Dictionary<int,IGobofObject> _registeredObjects = new Dictionary<int, IGobofObject>();
 
     void Awake() {
       Instance = this;
       wssv = new WebSocketServer ("ws://0.0.0.0:8765");
-      wssv.AddWebSocketService<TrackerWebsocketService> ("/");
-      wssv.Start ();
-      Debug.Log("server started!");
+      tws = new TrackerWebsocketService();
+      
+      wssv.Start (socket =>{
+
+
+        socket.OnMessage=tws.OnMessage;
+        Debug.Log("server started!");
+      });
     }
 
     public static void RegisterObject(IGobofObject o)
@@ -47,6 +52,6 @@ public class GobofCore : MonoBehaviour {
     }
 
     void OnDestroy() {
-        wssv.Stop();
+        //wssv.Stop();
     }
 }
